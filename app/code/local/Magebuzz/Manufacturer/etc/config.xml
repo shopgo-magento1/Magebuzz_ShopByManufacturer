@@ -18,7 +18,7 @@
     <layout>
       <updates>
         <manufacturer>
-          <file>manufacturer.xml</file>
+          <file>magebuzz/manufacturer.xml</file>
         </manufacturer>
       </updates>
     </layout>
@@ -49,7 +49,7 @@
     <layout>
       <updates>
         <manufacturer>
-          <file>manufacturer.xml</file>
+          <file>magebuzz/manufacturer.xml</file>
         </manufacturer>
       </updates>
     </layout>

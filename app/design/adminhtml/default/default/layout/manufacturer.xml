@@ -3,7 +3,7 @@
   <default>
     <reference name="notifications">
       <block type="manufacturer/adminhtml_manufacturer" name="manufacturer_notifications"
-             template="manufacturer/notifications.phtml"></block>
+             template="magebuzz/manufacturer/notifications.phtml"></block>
     </reference>
   </default>
   <adminhtml_magebuzz_manufacturer_index>

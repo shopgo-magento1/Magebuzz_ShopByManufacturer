@@ -7,7 +7,7 @@ class Magebuzz_Manufacturer_Block_Sidebar extends Magebuzz_Manufacturer_Block_Ma
 {
   public function _construct()
   {
-    $this->setTemplate('manufacturer/sidebar.phtml');
+    $this->setTemplate('magebuzz/manufacturer/sidebar.phtml');
     return parent::_construct();
   }
 }

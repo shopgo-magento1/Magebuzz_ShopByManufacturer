@@ -43,7 +43,7 @@
       </action>
     </reference>
     <reference name="content">
-      <block type="manufacturer/manufacturer" name="manufacturer" template="manufacturer/manufacturer.phtml"/>
+      <block type="manufacturer/manufacturer" name="manufacturer" template="magebuzz/manufacturer/manufacturer.phtml"/>
     </reference>
   </manufacturer_index_index>
   <manufacturer_index_view>
@@ -58,7 +58,7 @@
       </action>
     </reference>
     <reference name="content">
-      <block type="manufacturer/view" name="manufacturer.view" template="manufacturer/view.phtml">
+      <block type="manufacturer/view" name="manufacturer.view" template="magebuzz/manufacturer/view.phtml">
         <block type="catalog/product_list" name="manufacturer.product" template="catalog/product/list.phtml">
           <block type="core/text_list" name="product_list.name.after" as="name.after" />
           <block type="core/text_list" name="product_list.after" as="after" />
@@ -91,7 +91,7 @@
   <catalog_product_view>
     <reference name="product.info.extrahint">
       <block type="manufacturer/product_manufacturer" name="product.manufacturer"
-             template="manufacturer/product/manufacturer.phtml"/>
+             template="magebuzz/manufacturer/product/manufacturer.phtml"/>
     </reference>
   </catalog_product_view>
-</layout> 
+</layout>

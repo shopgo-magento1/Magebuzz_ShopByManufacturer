@@ -1,0 +1,10 @@
+app/code/local/Magebuzz/Manufacturer/
+app/design/adminhtml/default/default/template/magebuzz/manufacturer/
+app/design/adminhtml/default/default/layout/magebuzz/manufacturer.xml
+app/design/frontend/base/default/layout/magebuzz/manufacturer.xml
+app/design/frontend/base/default/template/magebuzz/manufacturer/
+app/etc/modules/Magebuzz_Manufacturer.xml
+app/locale/en_US/Magebuzz_Manufacturer.csv
+js/magebuzz/manufacturer/
+skin/frontend/base/default/css/magebuzz/manufacturer
+skin/frontend/base/default/magebuzz/manufacturer

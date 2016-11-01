@@ -1,0 +1,14 @@
+{
+    "name": "magebuzz/shop-by-manufacturer",
+    "type": "magento-module",
+    "description": "A Magento 1 extension that adds the ability to shop by brand",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "authors":[
+        {
+            "name": "Magebuzz",
+            "email": "support@magebuzz.com"
+        }
+    ]
+}

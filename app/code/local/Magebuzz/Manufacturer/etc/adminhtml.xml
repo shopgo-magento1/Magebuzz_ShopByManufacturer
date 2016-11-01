@@ -8,7 +8,7 @@
         <manage_manufacturer module="manufacturer">
           <title>Manage Manufacturers</title>
           <sort_order>0</sort_order>
-          <action>manufacturer/adminhtml_manufacturer</action>
+          <action>adminhtml/magebuzz_manufacturer</action>
         </manage_manufacturer>
         <settings module="manufacturer" translate="title">
           <title>Settings</title>
@@ -44,7 +44,7 @@
               <manage_manufacturer module="manufacturer">
                 <title>Manage Manufacturers</title>
                 <sort_order>0</sort_order>
-                <action>manufacturer/adminhtml_manufacturer</action>
+                <action>adminhtml/magebuzz_manufacturer</action>
               </manage_manufacturer>
               <settings module="manufacturer" translate="title">
                 <title>Settings</title>

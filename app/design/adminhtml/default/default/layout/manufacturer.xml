@@ -6,13 +6,13 @@
              template="manufacturer/notifications.phtml"></block>
     </reference>
   </default>
-  <manufacturer_adminhtml_manufacturer_index>
+  <adminhtml_magebuzz_manufacturer_index>
     <reference name="content">
       <block type="manufacturer/adminhtml_manufacturer" name="manufacturer"/>
     </reference>
-  </manufacturer_adminhtml_manufacturer_index>
+  </adminhtml_magebuzz_manufacturer_index>
 
-  <manufacturer_adminhtml_manufacturer_productlist>
+  <adminhtml_magebuzz_manufacturer_productlist>
     <block type="core/text_list" name="root">
       <block type="manufacturer/adminhtml_manufacturer_edit_tab_products" name="manufacturer.edit.tab.products"/>
       <block type="adminhtml/widget_grid_serializer" name="related_grid_serializer">
@@ -27,11 +27,11 @@
         </action>
       </block>
     </block>
-  </manufacturer_adminhtml_manufacturer_productlist>
+  </adminhtml_magebuzz_manufacturer_productlist>
 
-  <manufacturer_adminhtml_manufacturer_productlistgrid>
+  <adminhtml_magebuzz_manufacturer_productlistgrid>
     <block type="core/text_list" name="root">
       <block type="manufacturer/adminhtml_manufacturer_edit_tab_products" name="manufacturer.edit.tab.products"/>
     </block>
-  </manufacturer_adminhtml_manufacturer_productlistgrid>
+  </adminhtml_magebuzz_manufacturer_productlistgrid>
 </layout>

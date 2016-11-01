@@ -3,7 +3,7 @@
 * Copyright (c) 2016 www.magebuzz.com
 */
 
-	class Magebuzz_Manufacturer_Adminhtml_ManufacturerController extends Mage_Adminhtml_Controller_action
+	class Magebuzz_Manufacturer_Adminhtml_Magebuzz_ManufacturerController extends Mage_Adminhtml_Controller_action
 	{
 		protected function _initAction()
 		{
@@ -423,7 +423,7 @@
 			}
 			$this->_redirect('*/*/index');
 		}
-		
+
 		protected function _isAllowed() {
 			return Mage::getSingleton('admin/session')->isAllowed('manufacturer/manage_manufacturer');
 		}

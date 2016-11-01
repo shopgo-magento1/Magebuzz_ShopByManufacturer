@@ -25,7 +25,7 @@ class Magebuzz_Manufacturer_Block_Adminhtml_Manufacturer_Edit_Tabs extends Mage_
       'label' => Mage::helper('manufacturer')->__('Manufacturer Products'),
       'title' => Mage::helper('manufacturer')->__('Manufacturer Products'),
       'class' => 'ajax',
-      'url'   => $this->getUrl('manufacturer/adminhtml_manufacturer/productlist', array('_current' => TRUE, 'id' => $this->getRequest()->getParam('id'))),
+      'url'   => $this->getUrl('adminhtml/magebuzz_manufacturer/productlist', array('_current' => TRUE, 'id' => $this->getRequest()->getParam('id'))),
     ));
     $this->addTab('manufacturer_meta_data', array(
       'label'   => Mage::helper('manufacturer')->__('Meta Data'),

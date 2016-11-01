@@ -2,7 +2,7 @@
 <config>
   <modules>
     <Magebuzz_Manufacturer>
-      <version>0.1.6</version>
+      <version>0.1.7</version>
     </Magebuzz_Manufacturer>
   </modules>
   <frontend>
@@ -36,13 +36,13 @@
   </frontend>
   <admin>
     <routers>
-      <manufacturer>
-        <use>admin</use>
-        <args>
-          <module>Magebuzz_Manufacturer</module>
-          <frontName>manufacturer</frontName>
-        </args>
-      </manufacturer>
+      <adminhtml>
+          <args>
+              <modules>
+                  <manufacturer after="Mage_Adminhtml">Magebuzz_Manufacturer_Adminhtml</manufacturer>
+              </modules>
+          </args>
+      </adminhtml>
     </routers>
   </admin>
   <adminhtml>

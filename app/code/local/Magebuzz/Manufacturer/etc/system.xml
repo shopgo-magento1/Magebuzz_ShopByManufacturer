@@ -25,15 +25,6 @@
           <show_in_website>1</show_in_website>
           <show_in_store>1</show_in_store>
           <fields>
-            <top_link_url translate="label">
-              <label>Show URL in top link</label>
-              <frontend_type>select</frontend_type>
-              <sort_order>1</sort_order>
-              <source_model>adminhtml/system_config_source_yesno</source_model>
-              <show_in_default>1</show_in_default>
-              <show_in_website>1</show_in_website>
-              <show_in_store>1</show_in_store>
-            </top_link_url>
             <default_manufacturer_image>
               <label>Default manufacturer image</label>
               <frontend_type>image</frontend_type>

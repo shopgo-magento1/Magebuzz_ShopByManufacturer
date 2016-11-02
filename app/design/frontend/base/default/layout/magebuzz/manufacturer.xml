@@ -1,18 +1,6 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
   <default>
-    <reference name="top.links">
-      <action method="addLink" translate="label title" module="manufacturer"
-              ifconfig="manufacturer/general/top_link_url">
-        <label helper="manufacturer/getConfigTextLabe"/>
-        <url helper="manufacturer/getConfigTextRouter"/>
-        <title helper="manufacturer/getConfigTextLabe"/>
-        <prepare>true</prepare>
-        <urlParams/>
-        <position>0</position>
-      </action>
-    </reference>
-
     <reference name="left">
       <block type="manufacturer/left" before="-" name="manufacturer.left.sidebar">
         <action method="displayOnSidebarBlock"/>

@@ -18,6 +18,12 @@
         <action method="displayOnSidebarBlock"/>
       </block>
     </reference>
+
+    <reference name="top.menu">
+      <!--Note: use custom block file for menu drawing and default template file-->
+      <block type="manufacturer/manufacturer" name="newmenu.topnav" template="magebuzz/manufacturer/navigation.phtml">
+      </block>
+    </reference>
   </default>
   <manufacturer_index_index>
     <reference name="root">

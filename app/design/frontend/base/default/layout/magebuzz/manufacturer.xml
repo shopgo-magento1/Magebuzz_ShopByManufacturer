@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
   <default>
+    <reference name="head">
+      <action method="addCss">
+        <stylesheet>magebuzz/manufacturer/css/manufacturer.css</stylesheet>
+      </action>
+    </reference>
     <reference name="left">
       <block type="manufacturer/left" before="-" name="manufacturer.left.sidebar">
         <action method="displayOnSidebarBlock"/>
@@ -20,9 +25,6 @@
       </action>
     </reference>
     <reference name="head">
-      <action method="addCss">
-        <stylesheet>magebuzz/manufacturer/css/manufacturer.css</stylesheet>
-      </action>
       <action method="addJs">
         <script>magebuzz/manufacturer/jquery.js</script>
       </action>
@@ -44,11 +46,6 @@
     <reference name="root">
       <action method="setTemplate">
         <template>page/2columns-left.phtml</template>
-      </action>
-    </reference>
-    <reference name="head">
-      <action method="addCss">
-        <stylesheet>magebuzz/manufacturer/css/manufacturer.css</stylesheet>
       </action>
     </reference>
     <reference name="content">

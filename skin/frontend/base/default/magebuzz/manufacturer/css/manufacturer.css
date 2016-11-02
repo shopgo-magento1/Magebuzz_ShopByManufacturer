@@ -150,7 +150,7 @@ a.manufacturer-name {
 }
 
 .block-manufacturer .block-content {
-    padding: 9px;
+    padding: 10px;
 }
 
 .manufacturer-sidebar {
@@ -197,4 +197,8 @@ a.manufacturer-name {
 
 .manufacturer-description .description-info {
     text-align: justify;
+}
+
+.manufacturers-list {
+    overflow: hidden;
 }

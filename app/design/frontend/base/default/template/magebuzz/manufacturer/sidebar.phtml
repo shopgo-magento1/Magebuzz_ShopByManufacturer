@@ -6,11 +6,11 @@ $manufacturers = $this->getManufacturers();?>
 <?php if (count($manufacturers)): ?>
   <div class="block block-manufacturer">
     <div class="block-title">
-      <strong><span><?php echo Mage::helper('manufacturer')->getConfigTextLabe(); ?></span></strong>
+      <strong><span><?php echo $this->__("Shop By Brand"); ?></span></strong>
     </div>
     <div class="block-content">
       <div class="manufacturer-sidebar">
-        <ul>
+        <ul class="manufacturers-list">
           <?php $i = 0;
           foreach ($manufacturers as $manufacturer): ?>
             <li class="<?php if ($i % 2 == 0): ?>left<?php else: ?>right<?php endif; ?>">

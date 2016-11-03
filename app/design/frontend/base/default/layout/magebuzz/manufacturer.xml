@@ -24,20 +24,6 @@
         <template>page/2columns-left.phtml</template>
       </action>
     </reference>
-    <reference name="head">
-      <action method="addJs">
-        <script>magebuzz/manufacturer/jquery.js</script>
-      </action>
-      <action method="addJs">
-        <script>magebuzz/manufacturer/jquery.scrollTo-min.js</script>
-      </action>
-      <action method="addJs">
-        <script>magebuzz/manufacturer/jquery.scrollShow.js</script>
-      </action>
-      <action method="addJs">
-        <script>magebuzz/manufacturer/manufacturer_slider.js</script>
-      </action>
-    </reference>
     <reference name="content">
       <block type="manufacturer/manufacturer" name="manufacturer" template="magebuzz/manufacturer/manufacturer.phtml"/>
     </reference>

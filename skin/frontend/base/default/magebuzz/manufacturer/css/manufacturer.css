@@ -182,7 +182,6 @@ a.manufacturer-name {
 }
 
 .manufacturer-description .manufacturer-des-image {
-    border: 1px solid #ddd;
     float: left;
     margin-right: 20px;
 }
@@ -265,4 +264,36 @@ a.manufacturer-name {
     .manufacturer-index-view .toolbar .sorter {
         display: none;
     }
+}
+
+.mage_brand_container {
+    border: none!important;
+}
+
+div.mage_brand_logo {
+    float: left;
+    margin-bottom: 5px;
+    min-height: 150px;
+}
+
+.mage_brand_logo img {
+    max-width: 150px;
+}
+
+div.mage_brand_container, div.mage_brand_logo {
+    float: left;
+}
+
+div.mage_brand_container {
+    float: left;
+    min-height: 180px;
+    text-align: center;
+    background-color: white;
+    padding: 8px;
+    margin: 5px;
+}
+
+div.mage_brand_title {
+    font-size: 15px;
+    font-weight: bold;
 }

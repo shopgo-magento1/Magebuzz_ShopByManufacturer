@@ -45,15 +45,6 @@
               <show_in_website>1</show_in_website>
               <show_in_store>1</show_in_store>
             </alphabet_sorting>
-            <group_alphabet>
-              <label>Group manufacturer by the first letter</label>
-              <frontend_type>select</frontend_type>
-              <sort_order>5</sort_order>
-              <source_model>adminhtml/system_config_source_yesno</source_model>
-              <show_in_default>1</show_in_default>
-              <show_in_website>1</show_in_website>
-              <show_in_store>1</show_in_store>
-            </group_alphabet>
             <show_featured_manufacturer>
               <label>Show featured manufacturer in top</label>
               <frontend_type>select</frontend_type>
@@ -83,64 +74,6 @@
             </enable_left_nav>
           </fields>
         </general>
-        <configfield translate="label">
-          <label>Configuration Text</label>
-          <frontend_type>text</frontend_type>
-          <sort_order>2</sort_order>
-          <show_in_default>1</show_in_default>
-          <show_in_website>1</show_in_website>
-          <show_in_store>0</show_in_store>
-          <fields>
-            <text_attribute_code>
-              <label>Attribute Manufacturer Code</label>
-              <backend_model>manufacturer/validatemanufacturer</backend_model>
-              <frontend_type>text</frontend_type>
-              <sort_order>8</sort_order>
-              <show_in_default>1</show_in_default>
-              <show_in_website>1</show_in_website>
-              <show_in_store>1</show_in_store>
-              <validate>required-entry validate-alpha</validate>
-            </text_attribute_code>
-            <text_manufacturer_lable>
-              <label>Text Title Display In Frontend</label>
-              <frontend_type>text</frontend_type>
-              <sort_order>8</sort_order>
-              <show_in_default>1</show_in_default>
-              <show_in_website>1</show_in_website>
-              <show_in_store>1</show_in_store>
-              <validate>required-entry validate-alpha</validate>
-            </text_manufacturer_lable>
-            <text_featured_manufacturer_lable>
-              <label>Text Display In Featured</label>
-              <frontend_type>text</frontend_type>
-              <sort_order>8</sort_order>
-              <show_in_default>1</show_in_default>
-              <show_in_website>1</show_in_website>
-              <show_in_store>1</show_in_store>
-              <validate>required-entry</validate>
-              <comment>Title display in list featured manufacturer</comment>
-            </text_featured_manufacturer_lable>
-            <text_all_manufacturer_lable>
-              <label>Text Display For All</label>
-              <frontend_type>text</frontend_type>
-              <sort_order>8</sort_order>
-              <show_in_default>1</show_in_default>
-              <show_in_website>1</show_in_website>
-              <show_in_store>1</show_in_store>
-              <validate>required-entry</validate>
-              <comment>Title display in list all manufacturer</comment>
-            </text_all_manufacturer_lable>
-            <text_router>
-              <label>Text Router Display In Frontend</label>
-              <frontend_type>text</frontend_type>
-              <sort_order>8</sort_order>
-              <show_in_default>1</show_in_default>
-              <show_in_website>1</show_in_website>
-              <show_in_store>1</show_in_store>
-              <validate>required-entry validate-alpha</validate>
-            </text_router>
-          </fields>
-        </configfield>
       </groups>
     </manufacturer>
   </sections>

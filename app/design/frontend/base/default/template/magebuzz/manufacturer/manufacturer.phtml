@@ -11,7 +11,7 @@ if ($this->showFeaturedManufacturers()):?>
         foreach ($featuredManufacturers as $featuredManu): $i++ ?>
             <div class="mage_brand_container">
                 <a href="<?php echo $this->getManufacturerUrl($featuredManu->getId()); ?>"
-                   title="<?php echo $featuredManu->getName(); ?>" target="_blank" class="img">
+                   title="<?php echo $featuredManu->getName(); ?>" class="img">
                     <div class="mage_brand_logo">
                       <img id="img<?php echo $i; ?>"
                              src="<?php echo $this->getFeaturedImage($featuredManu->getImage()) ?>"

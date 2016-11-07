@@ -2,9 +2,6 @@
 }
 
 /* Featured Manufacturer */
-.featured-manufacturers {
-    overflow: hidden;
-}
 
 .manufacturers h2.title, .featured-manufacturers h2.title {
     border-bottom: 1px solid #DDDDDD;
@@ -272,8 +269,7 @@ a.manufacturer-name {
 
 div.mage_brand_logo {
     float: left;
-    margin-bottom: 5px;
-    min-height: 150px;
+    margin-bottom: 20px;
 }
 
 .mage_brand_logo img {
@@ -286,14 +282,52 @@ div.mage_brand_container, div.mage_brand_logo {
 
 div.mage_brand_container {
     float: left;
-    min-height: 180px;
     text-align: center;
     background-color: white;
-    padding: 8px;
+    padding: 15px;
     margin: 5px;
 }
 
 div.mage_brand_title {
     font-size: 15px;
     font-weight: bold;
+}
+
+.featured-manufacturers .flexslider4 .flex-direction-nav {
+    position: relative;
+    bottom: 70px;
+}
+.featured-manufacturers ul {
+    padding-left: 0;
+    list-style-type: none!important;
+}
+
+.featured-manufacturers .flexslider4 .flex-direction-nav .flex-prev {
+    left: -10px;
+}
+
+.featured-manufacturers .flexslider4 .flex-direction-nav .flex-next {
+    right: -10px;
+}
+
+.featured-manufacturers .flexslider4 .flex-direction-nav .flex-next,
+.featured-manufacturers .flexslider4 .flex-direction-nav .flex-prev {
+    position: absolute;
+    top: 20px;
+    outline: 0;
+    color: #444;
+    text-decoration: none;
+}
+
+.featured-manufacturers .flexslider4 {
+    direction: ltr;
+}
+
+.featured-manufacturers .slides {
+    margin: 0;
+    padding-left: 10px;
+}
+
+.featured-manufacturers  .mage_brand_logo {
+    margin: 0;
 }

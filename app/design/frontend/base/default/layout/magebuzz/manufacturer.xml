@@ -18,6 +18,11 @@
       </block>
     </reference>
   </default>
+  <cms_index_index>
+    <reference name="cms.wrapper">
+      <block type="manufacturer/manufacturer" name="manufacturer.slider" template="magebuzz/manufacturer/manufacturer-slider.phtml" after="-"/>
+    </reference>
+  </cms_index_index>
   <manufacturer_index_index>
     <reference name="root">
       <action method="setTemplate">

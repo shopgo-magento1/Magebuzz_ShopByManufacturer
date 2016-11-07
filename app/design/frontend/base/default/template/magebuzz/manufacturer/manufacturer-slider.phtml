@@ -1,0 +1,60 @@
+<?php
+/*
+* Copyright (c) 2016 www.magebuzz.com
+*/
+if ($this->showFeaturedManufacturers()):?>
+    <div class="featured-manufacturers">
+        <?php $featuredManufacturers = $this->getFeaturedManufacturers(); ?>
+        <?php if (count($featuredManufacturers)): ?>
+            <h2><?php echo $this->__("Featured Brands"); ?></h2>
+            <div class="flexslider4">
+                <ul class="slides">
+                    <?php $i = 0;
+                    foreach ($featuredManufacturers as $featuredManu): $i++ ?>
+                        <li class="mage_brand_container">
+                            <a href="<?php echo $this->getManufacturerUrl($featuredManu->getId()); ?>"
+                               title="<?php echo $featuredManu->getName(); ?>" class="img">
+                                <div class="mage_brand_logo">
+                                    <img id="img<?php echo $i; ?>"
+                                         src="<?php echo $this->getFeaturedImage($featuredManu->getImage()) ?>"
+                                         alt="<?php echo $featuredManu->getName(); ?>" />
+                                </div>
+                            </a>
+                        </li>
+                    <?php endforeach ?>
+                </ul>
+            </div>
+        <?php else: ?>
+            <p class="note-msg"><?php echo $this->__('There are no brands found.') ?></p>
+        <?php endif; ?>
+    </div>
+    <script type="text/javascript">
+
+        jQuery(window).load(function() {
+            var brandSlider = jQuery('.flexslider4'),
+                sliderWidth = brandSlider.width();
+
+            brandSlider.flexslider({
+                animation: "slide",
+                touch: true,
+                controlNav: false,
+                itemWidth: (window.matchMedia("(max-width : 320px)").matches) ? sliderWidth : 193,
+                move: 1
+            });
+
+            jQuery(window).bind('resize', function() {
+
+                setTimeout(function(){
+                    var slider = brandSlider.data('flexslider');
+
+                    slider.vars.itemWidth = (window.matchMedia("(max-width : 320px)").matches) ? brandSlider.width() : 193;
+
+                    slider.setup();
+                    slider.resize();
+                }, 1);
+
+            });
+        });
+
+    </script>
+<?php endif; ?>

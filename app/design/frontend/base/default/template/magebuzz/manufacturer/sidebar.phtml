@@ -6,21 +6,24 @@ $manufacturers = $this->getManufacturers();?>
 <?php if (count($manufacturers)): ?>
   <div class="block block-manufacturer">
     <div class="block-title">
-      <strong><span><?php echo Mage::helper('manufacturer')->getConfigTextLabe(); ?></span></strong>
+      <strong><span><?php echo $this->__("Shop By Brand"); ?></span></strong>
     </div>
     <div class="block-content">
       <div class="manufacturer-sidebar">
-        <ul>
+        <ul class="manufacturers-list">
           <?php $i = 0;
           foreach ($manufacturers as $manufacturer): ?>
             <li class="<?php if ($i % 2 == 0): ?>left<?php else: ?>right<?php endif; ?>">
               <a href="<?php echo $this->getManufacturerUrl($manufacturer->getId()); ?>"
                  title="<?php echo $manufacturer->getName(); ?>">
-                <?php echo $manufacturer->getName(); ?>
+                <img class="display-both-image" src="<?php echo Mage::helper('manufacturer')->getManufacturerImage($manufacturer->getImage()) ?>" />
               </a>
             </li>
             <?php $i++; ?>
           <?php endforeach; ?>
+          <li class="brands-item all-brands-page">
+            <a href="<?php echo $this->getUrl("manufacturer"); ?>"><?php echo $this->__("All Brands"); ?></a>
+          </li>
         </ul>
       </div>
     </div>

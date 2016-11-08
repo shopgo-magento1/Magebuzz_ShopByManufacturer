@@ -2,9 +2,6 @@
 }
 
 /* Featured Manufacturer */
-.featured-manufacturers {
-    overflow: hidden;
-}
 
 .manufacturers h2.title, .featured-manufacturers h2.title {
     border-bottom: 1px solid #DDDDDD;
@@ -150,7 +147,7 @@ a.manufacturer-name {
 }
 
 .block-manufacturer .block-content {
-    padding: 9px;
+    padding: 10px;
 }
 
 .manufacturer-sidebar {
@@ -182,13 +179,12 @@ a.manufacturer-name {
 }
 
 .manufacturer-description .manufacturer-des-image {
-    border: 1px solid #ddd;
     float: left;
-    margin: 20px
+    margin-right: 20px;
 }
 
 .manufacturer-des-image img {
-    max-width: 300px;
+    max-width: 100px;
 }
 
 .manufacturer-description img {
@@ -197,4 +193,150 @@ a.manufacturer-name {
 
 .manufacturer-description .description-info {
     text-align: justify;
+}
+
+.manufacturers-list {
+    overflow: hidden;
+}
+
+/* Clarity design implementation */
+.manufacturer-index-view .toolbar {
+    margin: 1em 0;
+}
+
+.manufacturer-index-view .toolbar .pager {
+    float: right;
+    width: 320px;
+    position: relative;
+    left: 11px;
+}
+
+.manufacturer-index-view .toolbar .pager .pages {
+    float: left;
+    width: auto;
+    margin-top: 0;
+}
+
+.manufacturer-index-view .toolbar .sorter {
+    width: 50%;
+}
+
+.manufacturer-index-view .products-list .img-container {
+    position: relative;
+    display: inline-block;
+    width: 298px;
+    height: 330px;
+    float: left;
+}
+
+.manufacturer-index-view .products-list .badges-wrapper {
+    position: absolute;
+    display: block;
+    text-align: right;
+    top: 10px;
+    right: 0;
+    z-index: 10;
+}
+
+.manufacturer-index-view .products-list .label-sale {
+    position: relative;
+    top: 1px;
+}
+
+.manufacturer-index-view .products-list .product-shop {
+    position: absolute;
+    display: inline-block;
+    padding-left: 1rem;
+}
+
+@media (max-width: 675px) {
+    .manufacturer-index-view .toolbar .pager {
+        width: 50%;
+        float: left;
+    }
+    .manufacturer-index-view .toolbar .pager .pages {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .manufacturer-index-view .toolbar .sorter {
+        display: none;
+    }
+}
+
+.mage_brand_container {
+    border: none!important;
+}
+
+div.mage_brand_logo {
+    float: left;
+    margin-bottom: 20px;
+}
+
+.mage_brand_logo img {
+    max-width: 150px;
+}
+
+div.mage_brand_container, div.mage_brand_logo {
+    float: left;
+}
+
+div.mage_brand_container {
+    float: left;
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+    margin: 5px;
+}
+
+div.mage_brand_title {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.featured-manufacturers .flexslider4 .flex-direction-nav {
+    position: relative;
+    bottom: 70px;
+}
+.featured-manufacturers ul {
+    padding-left: 0;
+    list-style-type: none!important;
+}
+
+.featured-manufacturers .flexslider4 .flex-direction-nav .flex-prev {
+    left: -10px;
+}
+
+.featured-manufacturers .flexslider4 .flex-direction-nav .flex-next {
+    right: -10px;
+}
+
+.featured-manufacturers .flexslider4 .flex-direction-nav .flex-next,
+.featured-manufacturers .flexslider4 .flex-direction-nav .flex-prev {
+    position: absolute;
+    top: 20px;
+    outline: 0;
+    color: #444;
+    text-decoration: none;
+}
+
+.featured-manufacturers .flexslider4 {
+    direction: ltr;
+}
+
+.featured-manufacturers .slides {
+    margin: 0;
+    padding-left: 10px;
+}
+
+.featured-manufacturers  .mage_brand_logo {
+    margin: 0;
+}
+
+.manufacturers-list li img {
+    padding-bottom: 10px!important;
+}
+
+.manufacturers-list li:last-child {
+    display: block;
+    clear: both;
 }

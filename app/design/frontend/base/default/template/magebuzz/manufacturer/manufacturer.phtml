@@ -6,91 +6,23 @@ if ($this->showFeaturedManufacturers()):?>
   <div class="featured-manufacturers">
     <?php $featuredManufacturers = $this->getFeaturedManufacturers(); ?>
     <?php if (count($featuredManufacturers)): ?>
-      <h2 class="title"><?php echo $this->_helperMenufacturer()->getConfigTextFeatured(); ?></h2>
-      <ul id="featured-manu-screen">
-        <li>
-          <a id="navleft" href="#">&nbsp;</a>
-        </li>
-        <li id="featured-manu-view">
-          <ul id="featured-manu-images">
-            <?php $i = 0;
-            foreach ($featuredManufacturers as $featuredManu): $i++ ?>
-              <li>
+      <h1><?php echo $this->__("Featured Brands"); ?></h1>
+        <?php $i = 0;
+        foreach ($featuredManufacturers as $featuredManu): $i++ ?>
+            <div class="mage_brand_container">
                 <a href="<?php echo $this->getManufacturerUrl($featuredManu->getId()); ?>"
-                   title="<?php echo $featuredManu->getName(); ?>" target="_blank" class="img">
-                <div class="item">
-                  <img id="img<?php echo $i; ?>"
-                         src="<?php echo $this->getFeaturedImage($featuredManu->getImage()) ?>"
-                         alt="<?php echo $featuredManu->getName(); ?>" />
-                </div>
+                   title="<?php echo $featuredManu->getName(); ?>" class="img">
+                    <div class="mage_brand_logo">
+                      <img id="img<?php echo $i; ?>"
+                             src="<?php echo $this->getFeaturedImage($featuredManu->getImage()) ?>"
+                             alt="<?php echo $featuredManu->getName(); ?>" />
+                    </div>
+                    <div class="mage_brand_title"><?php echo $featuredManu->getName(); ?></div>
                 </a>
-              </li>
-            <?php endforeach ?>
-          </ul>
-        </li>
-        <li><a id="navright" href="#">&nbsp;</a></li>
-      </ul>
-    <?php endif; ?>
-  </div>
-<?php endif; ?>
-<?php $manufacturerCollection = $this->getManufacturers(); ?>
-<?php if (count($manufacturerCollection)): ?>
-  <div class="manufacturers">
-    <h2 class="title"><?php echo $this->_helperMenufacturer()->getConfigTextAll(); ?></h2>
-    <?php if ($this->groupAlphabet()): ?>
-      <!-- Group manufacturer by first letter-->
-      <?php $letters = $this->getAvailableLetter($manufacturerCollection); ?>
-      <?php if (count($letters)): ?>
-        <?php $i = 0; ?>
-        <?php foreach ($letters as $letter): ?>
-          <?php if ($i++ % 3 == 0): ?>
-            <ul class="group-manufacturer-grid">
-          <?php endif ?>
-          <li class="item <?php if (($i - 1) % 3 == 0): ?>first<?php endif; ?>">
-            <h2><?php echo $letter; ?></h2>
-            <?php //$manufacturers = $manufacturerCollection->addFieldToFilter('name', array('like' => $letter . '%'));?>
-            <?php //echo count($manufacturers); die('sss');?>
-            <?php $manufacturers = $this->getManufacturersByFirstLetter($letter); ?>
-            <?php if (count($manufacturers)): ?>
-              <dl>
-                <?php foreach ($manufacturers as $manufacturer): ?>
-                  <dt><a
-                      href="<?php echo $this->getManufacturerUrl($manufacturer->getId()); ?>"><?php echo $manufacturer->getName(); ?></a>
-                  </dt>
-                <?php endforeach; ?>
-              </dl>
-            <?php endif; ?>
-          </li>
-          <?php if ($i % 3 == 0 || $i == count($manufacturerCollection)): ?>
-            </ul>
-          <?php endif ?>
-        <?php endforeach; ?>
-      <?php endif; ?>
-
-    <?php else: ?>
-      <!-- normal display -->
-      <?php $i = 0; ?>
-      <?php foreach ($manufacturerCollection as $manufacturer): ?>
-        <?php if ($i++ % 3 == 0): ?>
-          <ul class="manufacturer-grid">
-        <?php endif ?>
-        <li class="item <?php if (($i - 1) % 3 == 0): ?>first<?php endif; ?>">
-          <?php //if ($this->displayImage()):?>
-          <!--<div class="manufacturer-image">
-						<a href="#" title="<?php echo $manufacturer->getName(); ?>" class="manufacturer-image">
-							<img width="80px" height="80px;" src="<?php echo $this->getManufacturerImageListingUrl($manufacturer->getImage()) ?>" alt="<?php echo $manufacturer->getName(); ?>" />
-						</a>
-					</div>-->
-          <?php //endif?>
-          <a class="manufacturer-name"
-             href="<?php echo $this->getManufacturerUrl($manufacturer->getId()); ?>"><?php echo $manufacturer->getName(); ?></a>
-        </li>
-        <?php if ($i % 3 == 0 || $i == count($manufacturerCollection)): ?>
-          </ul>
-        <?php endif ?>
-      <?php endforeach; ?>
+            </div>
+        <?php endforeach ?>
     <?php endif; ?>
   </div>
 <?php else: ?>
-  <p class="note-msg"><?php echo $this->__('There are no manufacturer matching the selection.') ?></p>
+    <p class="note-msg"><?php echo $this->__('There are no manufacturer matching the selection.') ?></p>
 <?php endif; ?>

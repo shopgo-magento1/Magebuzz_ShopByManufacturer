@@ -1,45 +1,32 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
   <default>
-    <reference name="top.links">
-      <action method="addLink" translate="label title" module="manufacturer"
-              ifconfig="manufacturer/general/top_link_url">
-        <label helper="manufacturer/getConfigTextLabe"/>
-        <url helper="manufacturer/getConfigTextRouter"/>
-        <title helper="manufacturer/getConfigTextLabe"/>
-        <prepare>true</prepare>
-        <urlParams/>
-        <position>0</position>
+    <reference name="head">
+      <action method="addCss">
+        <stylesheet>magebuzz/manufacturer/css/manufacturer.css</stylesheet>
       </action>
     </reference>
-
     <reference name="left">
       <block type="manufacturer/left" before="-" name="manufacturer.left.sidebar">
         <action method="displayOnSidebarBlock"/>
       </block>
     </reference>
+
+    <reference name="top.menu">
+      <!--Note: use custom block file for menu drawing and default template file-->
+      <block type="manufacturer/manufacturer" name="newmenu.topnav" template="magebuzz/manufacturer/navigation.phtml">
+      </block>
+    </reference>
   </default>
+  <cms_index_index>
+    <reference name="cms.wrapper">
+      <block type="manufacturer/manufacturer" name="manufacturer.slider" template="magebuzz/manufacturer/manufacturer-slider.phtml" after="-"/>
+    </reference>
+  </cms_index_index>
   <manufacturer_index_index>
     <reference name="root">
       <action method="setTemplate">
         <template>page/2columns-left.phtml</template>
-      </action>
-    </reference>
-    <reference name="head">
-      <action method="addCss">
-        <stylesheet>magebuzz/manufacturer/css/manufacturer.css</stylesheet>
-      </action>
-      <action method="addJs">
-        <script>magebuzz/manufacturer/jquery.js</script>
-      </action>
-      <action method="addJs">
-        <script>magebuzz/manufacturer/jquery.scrollTo-min.js</script>
-      </action>
-      <action method="addJs">
-        <script>magebuzz/manufacturer/jquery.scrollShow.js</script>
-      </action>
-      <action method="addJs">
-        <script>magebuzz/manufacturer/manufacturer_slider.js</script>
       </action>
     </reference>
     <reference name="content">
@@ -50,11 +37,6 @@
     <reference name="root">
       <action method="setTemplate">
         <template>page/2columns-left.phtml</template>
-      </action>
-    </reference>
-    <reference name="head">
-      <action method="addCss">
-        <stylesheet>magebuzz/manufacturer/css/manufacturer.css</stylesheet>
       </action>
     </reference>
     <reference name="content">

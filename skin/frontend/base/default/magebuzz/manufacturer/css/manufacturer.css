@@ -331,3 +331,12 @@ div.mage_brand_title {
 .featured-manufacturers  .mage_brand_logo {
     margin: 0;
 }
+
+.manufacturers-list li img {
+    padding-bottom: 10px!important;
+}
+
+.manufacturers-list li:last-child {
+    display: block;
+    clear: both;
+}

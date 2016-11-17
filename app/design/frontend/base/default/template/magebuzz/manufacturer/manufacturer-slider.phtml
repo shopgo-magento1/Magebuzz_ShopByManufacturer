@@ -5,8 +5,8 @@
 if ($this->showFeaturedManufacturers()):?>
     <div class="featured-manufacturers">
         <?php $featuredManufacturers = $this->getFeaturedManufacturers(); ?>
-        <?php if (count($featuredManufacturers)): ?>
-            <h2><?php echo $this->__("Featured Brands"); ?></h2>
+        <h2><?php echo $this->__("Featured Brands"); ?></h2>
+        <?php if (count($featuredManufacturers) > 0): ?>
             <div class="flexslider4">
                 <ul class="slides">
                     <?php $i = 0;

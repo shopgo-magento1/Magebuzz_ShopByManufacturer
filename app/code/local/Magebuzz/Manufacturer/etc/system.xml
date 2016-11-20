@@ -63,7 +63,7 @@
               <show_in_website>1</show_in_website>
               <show_in_store>1</show_in_store>
             </show_manufacturer_in_product_page>
-            <enable_left_nav>
+            <show_top_nav>
               <label>Enable manufacturer navigation</label>
               <frontend_type>select</frontend_type>
               <sort_order>8</sort_order>
@@ -71,7 +71,17 @@
               <show_in_default>1</show_in_default>
               <show_in_website>1</show_in_website>
               <show_in_store>1</show_in_store>
-            </enable_left_nav>
+            </show_top_nav>
+            <brand_view>
+              <label>Brand view on brands listing page</label>
+              <comment>Please make sure to clear cache after changing this field value</comment>
+              <frontend_type>select</frontend_type>
+              <sort_order>9</sort_order>
+              <source_model>manufacturer/system_config_source_brandview</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </brand_view>
           </fields>
         </general>
       </groups>

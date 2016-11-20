@@ -79,6 +79,16 @@ class Magebuzz_Manufacturer_Helper_Data extends Mage_Core_Helper_Abstract
     return (bool)Mage::getStoreConfig('manufacturer/general/show_featured_manufacturer');
   }
 
+  public function showTopNavigation()
+  {
+    return (bool)Mage::getStoreConfig('manufacturer/general/show_top_nav');
+  }
+
+  public function getBrandView()
+  {
+    return Mage::getStoreConfig('manufacturer/general/brand_view');
+  }
+
   public function getManufacturerImageListingUrl($image)
   {
     if (empty($image) || $image == '') return '';
@@ -163,9 +173,9 @@ class Magebuzz_Manufacturer_Helper_Data extends Mage_Core_Helper_Abstract
     return $idIdenfier;
   }
 
-	public function getLinkExtenal($string){
+  public function getLinkExtenal($string){
 
-		$link = preg_replace('/((http|ftp|https):\/\/)/', '', Mage::helper('catalog/product_url')->format($string));
-		return $link;
-	}
+    $link = preg_replace('/((http|ftp|https):\/\/)/', '', Mage::helper('catalog/product_url')->format($string));
+    return $link;
+  }
 }

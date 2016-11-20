@@ -41,6 +41,16 @@ class Magebuzz_Manufacturer_Block_Manufacturer extends Mage_Core_Block_Template
     return Mage::helper('manufacturer')->getFirstLetter($name);
   }
 
+  public function showTopNavigation()
+  {
+    return Mage::helper('manufacturer')->showTopNavigation();
+  }
+
+  public function getBrandView()
+  {
+    return Mage::helper('manufacturer')->getBrandView();
+  }
+
   public function getAvailableLetter($collection)
   {
     $prev = '';

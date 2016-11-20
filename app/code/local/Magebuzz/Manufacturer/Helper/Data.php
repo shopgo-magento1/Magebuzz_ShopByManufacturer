@@ -119,7 +119,8 @@ class Magebuzz_Manufacturer_Helper_Data extends Mage_Core_Helper_Abstract
         $imageObj = new Varien_Image($image_url);
         $imageObj->constrainOnly(TRUE);
         $imageObj->keepAspectRatio(TRUE);
-        $imageObj->keepFrame(FALSE);
+        $imageObj->keepFrame(TRUE);
+        $imageObj->backgroundColor(array(255, 255, 255));
         $imageObj->resize($width, $height);
         $imageObj->save($imageResized);
     }

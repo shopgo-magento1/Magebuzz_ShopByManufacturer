@@ -89,6 +89,11 @@ class Magebuzz_Manufacturer_Helper_Data extends Mage_Core_Helper_Abstract
     return Mage::getStoreConfig('manufacturer/general/brand_view');
   }
 
+  public function getBrandViewProduct()
+  {
+    return Mage::getStoreConfig('manufacturer/general/brand_view_product');
+  }
+
   public function getManufacturerImageListingUrl($image)
   {
     if (empty($image) || $image == '') return '';

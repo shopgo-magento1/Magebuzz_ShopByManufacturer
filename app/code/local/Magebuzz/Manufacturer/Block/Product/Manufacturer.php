@@ -20,4 +20,9 @@ class Magebuzz_Manufacturer_Block_Product_Manufacturer extends Mage_Catalog_Bloc
     $manufacturer = Mage::getModel('manufacturer/manufacturer')->loadByOptionId($optionId);
     return $manufacturer;
   }
+
+  public function getBrandViewProduct()
+  {
+    return Mage::helper('manufacturer')->getBrandViewProduct();
+  }
 }

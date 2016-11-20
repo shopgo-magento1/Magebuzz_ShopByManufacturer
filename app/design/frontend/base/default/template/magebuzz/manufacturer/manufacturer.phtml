@@ -6,18 +6,23 @@ if ($this->showFeaturedManufacturers()):?>
   <div class="featured-manufacturers">
     <?php $featuredManufacturers = $this->getFeaturedManufacturers(); ?>
     <?php if (count($featuredManufacturers)): ?>
-      <h1><?php echo $this->__("Featured Brands"); ?></h1>
+      <h1><?php echo $this->__("All Brands"); ?></h1>
         <?php $i = 0;
+        $brandView = $this->getBrandView();
         foreach ($featuredManufacturers as $featuredManu): $i++ ?>
             <div class="mage_brand_container">
                 <a href="<?php echo $this->getManufacturerUrl($featuredManu->getId()); ?>"
                    title="<?php echo $featuredManu->getName(); ?>" class="img">
-                    <div class="mage_brand_logo">
-                      <img id="img<?php echo $i; ?>"
-                             src="<?php echo $this->getFeaturedImage($featuredManu->getImage()) ?>"
-                             alt="<?php echo $featuredManu->getName(); ?>" />
-                    </div>
-                    <div class="mage_brand_title"><?php echo $featuredManu->getName(); ?></div>
+                    <?php if ($brandView == 1 || $brandView == 0): ?>
+                      <div class="mage_brand_logo">
+                        <img id="img<?php echo $i; ?>"
+                               src="<?php echo $this->getFeaturedImage($featuredManu->getImage()) ?>"
+                               alt="<?php echo $featuredManu->getName(); ?>" />
+                      </div>
+                    <?php endif; ?>
+                    <?php if ($brandView == 2 || $brandView == 0): ?>
+                      <div class="mage_brand_title"><?php echo $featuredManu->getName(); ?></div>
+                    <?php endif; ?>  
                 </a>
             </div>
         <?php endforeach ?>

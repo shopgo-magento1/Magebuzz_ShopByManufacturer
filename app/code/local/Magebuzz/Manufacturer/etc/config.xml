@@ -127,7 +127,7 @@
         <group_alphabet>0</group_alphabet>
         <show_featured_manufacturer>0</show_featured_manufacturer>
         <show_manufacturer_in_product_page>0</show_manufacturer_in_product_page>
-        <enable_left_nav>1</enable_left_nav>
+        <show_top_nav>1</show_top_nav>
       </general>
       <configfield>
         <text_attribute_code>manufacturer</text_attribute_code>

@@ -2,13 +2,21 @@
 /*
 * Copyright (c) 2016 www.magebuzz.com
 */
-if ($this->showManufacturerInProduct()) { ?>
+?>
+<?php if ($this->showManufacturerInProduct()): ?>
     <div class="shopbybrands-brand-page">
         <?php
           $manufacturer_option_id = $this->getProduct()->getData(Mage::helper('manufacturer')->getConfigAttributrCode());
           $manufacturer = $this->getManufacturerByProductId($manufacturer_option_id);
-          if (isset($manufacturer) && $manufacturer->getId()) { ?>
-              <img class="display-both-image" src="<?php echo Mage::helper('manufacturer')->getManufacturerImage($manufacturer->getImage()) ?>" />
-          <?php }
-        } ?>
+          $brandViewProduct = $this->getBrandViewProduct();
+          ?>
+          <?php if ($brandViewProduct == 1 || $brandViewProduct == 0): ?>
+	          <?php if (isset($manufacturer) && $manufacturer->getId()): ?>
+	              <img class="display-both-image" src="<?php echo Mage::helper('manufacturer')->getManufacturerImage($manufacturer->getImage()) ?>" />
+	          <?php endif; ?>
+	      <?php endif; ?>
+          <?php if ($brandViewProduct == 2 || $brandViewProduct == 0): ?>
+          		<div class="mage_brand_title"><?php echo $manufacturer->getName(); ?></div>
+          <?php endif; ?> 
     </div>
+<?php endif; ?>

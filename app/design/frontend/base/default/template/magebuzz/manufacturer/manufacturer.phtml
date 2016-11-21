@@ -16,7 +16,7 @@ if ($this->showFeaturedManufacturers()):?>
                     <?php if ($brandView == 1 || $brandView == 0): ?>
                       <div class="mage_brand_logo">
                         <img id="img<?php echo $i; ?>"
-                               src="<?php echo $this->getFeaturedImage($featuredManu->getImage()) ?>"
+                               src="<?php echo Mage::helper('manufacturer')->resizeManufacturerImage($featuredManu->getImage(), 150, 63) ?>"
                                alt="<?php echo $featuredManu->getName(); ?>" />
                       </div>
                     <?php endif; ?>

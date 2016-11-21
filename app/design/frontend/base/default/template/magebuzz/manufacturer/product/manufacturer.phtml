@@ -12,7 +12,7 @@
           ?>
           <?php if ($brandViewProduct == 1 || $brandViewProduct == 0): ?>
 	          <?php if (isset($manufacturer) && $manufacturer->getId()): ?>
-	              <img class="display-both-image" src="<?php echo Mage::helper('manufacturer')->getManufacturerImage($manufacturer->getImage()) ?>" />
+	              <img class="display-both-image" src="<?php echo Mage::helper('manufacturer')->resizeManufacturerImage($manufacturer->getImage(), 150, 63) ?>" />
 	          <?php endif; ?>
 	      <?php endif; ?>
           <?php if ($brandViewProduct == 2 || $brandViewProduct == 0): ?>

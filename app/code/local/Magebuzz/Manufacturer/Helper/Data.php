@@ -110,6 +110,23 @@ class Magebuzz_Manufacturer_Helper_Data extends Mage_Core_Helper_Abstract
     return Mage::getBaseUrl('media') . 'manufacturer' . '/resized/' . $image;
   }
 
+  public function resizeManufacturerImage($image, $width = null, $height = null)
+  {
+    if (empty($image) || $image == '') return '';
+    $image_url = Mage::getBaseDir('media') . DS . 'manufacturer' . DS . $image;
+    $imageResized = Mage::getBaseDir('media') . DS . 'manufacturer' . DS . 'resized' . DS . $image;
+    if (!file_exists($imageResized) && file_exists($image_url)) {
+        $imageObj = new Varien_Image($image_url);
+        $imageObj->constrainOnly(TRUE);
+        $imageObj->keepAspectRatio(TRUE);
+        $imageObj->keepFrame(TRUE);
+        $imageObj->backgroundColor(array(255, 255, 255));
+        $imageObj->resize($width, $height);
+        $imageObj->save($imageResized);
+    }
+    return Mage::getBaseUrl('media') . 'manufacturer' . '/resized/' . $image;
+  }
+
   public function getManufacturerImage($image)
   {
     if (empty($image) || $image == '') {

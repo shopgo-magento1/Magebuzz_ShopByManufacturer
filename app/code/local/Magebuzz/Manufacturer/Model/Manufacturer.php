@@ -55,6 +55,7 @@ class Magebuzz_Manufacturer_Model_Manufacturer extends Mage_Core_Model_Abstract
         $manufac_attribute_code = $this->_hepper()->getConfigAttributrCode();
         foreach ($insert as $pid) {
           $product = Mage::getModel('catalog/product')->load($pid);
+          $product->getResource()->getAttribute($manufac_attribute_code);
           $product->setData($manufac_attribute_code,$manufaturer_option)->save();
         }
       }

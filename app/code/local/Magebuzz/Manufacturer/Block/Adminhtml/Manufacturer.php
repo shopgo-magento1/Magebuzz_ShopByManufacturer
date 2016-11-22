@@ -11,11 +11,11 @@ class Magebuzz_Manufacturer_Block_Adminhtml_Manufacturer extends Mage_Adminhtml_
     $this->_blockGroup = 'manufacturer';
     $this->_headerText = Mage::helper('manufacturer')->__('Manufacturer Manager');
     $this->_addButtonLabel = Mage::helper('manufacturer')->__('Add Manufacturer');
-    $this->_addButton('import_from_magento', array(
+    /*$this->_addButton('import_from_magento', array(
       'label'   => Mage::helper('manufacturer')->__('Update Manufacturer from Magento'),
       'onclick' => 'setLocation(\'' . $this->_getImportUrl() . '\')',
       'class'   => 'add',
-    ));
+    ));*/
 
     $this->_addButton('reindex_url', array(
       'label'   => Mage::helper('manufacturer')->__('Reindex Manufacturer URL'),

@@ -91,6 +91,11 @@
 				//edit Form
 				if ($this->getRequest()->getParam('id') > 0) {
 					$model->setId($this->getRequest()->getParam('id'));
+					if (!$optionid) {
+						$manufacturerOption = array('manufacturerName' => $data['name'], 'store_id' => $storeIds);
+						$optionid = $model->addManufacturerOption($manufacturerOption);
+						$model->setOptionId($optionid);
+					}
 					if (isset($data['in_manufacturer_product'])) {
 						$productIds = array();
 						parse_str($data['in_manufacturer_product'], $productIds);

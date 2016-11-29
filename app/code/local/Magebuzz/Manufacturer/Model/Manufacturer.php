@@ -92,12 +92,22 @@ class Magebuzz_Manufacturer_Model_Manufacturer extends Mage_Core_Model_Abstract
   {
     $manufacturerModel = $this->load($manufacturer);
     $optionId = $manufacturerModel->getOptionId();
+    $manufacturerAttributeCode = $this->_hepper()->getConfigAttributrCode();
+    $manufacturerAttributeId = Mage::getResourceModel('eav/entity_attribute')->getIdByCode(
+      'catalog_product',
+      $manufacturerAttributeCode
+    );
     $resource = Mage::getSingleton('core/resource');
     $writeConnection = $resource->getConnection('core_write');
     $whereValue = 'eav_attribute_option_value.option_id = ' . $optionId;
     $writeConnection->delete('eav_attribute_option_value', $whereValue);
     $whereOption = 'eav_attribute_option.option_id = ' . $optionId;
     $writeConnection->delete('eav_attribute_option', $whereOption);
+    $condition = array(
+        'catalog_product_entity_int.value = ?' => (int) $optionId,
+        'catalog_product_entity_int.attribute_id = ?' => (int) $manufacturerAttributeId
+    );
+    $writeConnection->delete('catalog_product_entity_int', $condition);
   }
 
   public function getAllManufacturer($listOption)

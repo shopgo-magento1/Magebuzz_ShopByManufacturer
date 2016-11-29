@@ -38,27 +38,61 @@ class Magebuzz_Manufacturer_Model_Manufacturer extends Mage_Core_Model_Abstract
     return $manufacturer;
   }
 
-  public function compareProductList($newarray, $oldarray, $manufaturer_option)
+  public function compareProductList($newarray, $oldarray, $manufacturerOption)
   {
     $insert = array_diff($newarray, $oldarray);
-		$delete = array_diff($oldarray, $newarray);
-    $resource = Mage::getSingleton('core/resource');
+    $delete = array_diff($oldarray, $newarray);
+
     if (isset($newarray)) {
       if (count($delete)) {
-        $manufac_attribute_code_del = $this->_hepper()->getConfigAttributrCode();
-        foreach ($delete as $del) {
-          $product = Mage::getModel('catalog/product')->load($del);
-          $product->setData($manufac_attribute_code_del,null)->save();
-        }
+        $this->updateManufacturerProducts($delete, null);
       }
       if (count($insert)) {
-        $manufac_attribute_code = $this->_hepper()->getConfigAttributrCode();
-        foreach ($insert as $pid) {
-          $product = Mage::getModel('catalog/product')->load($pid);
-          $product->getResource()->getAttribute($manufac_attribute_code);
-          $product->setData($manufac_attribute_code,$manufaturer_option)->save();
-        }
+        $this->updateManufacturerProducts($insert, $manufacturerOption);
       }
+    }
+  }
+
+  public function updateManufacturerProducts($products, $manufacturerOption)
+  {
+    $products = Mage::getModel('catalog/product')->getCollection()
+      ->addAttributeToSelect('entity_id', 'type_id')
+      ->addAttributeToFilter('entity_id', array('in', $products));
+
+    if (!$products->getSize()) {
+      return false;
+    }
+
+    $data = array();
+    $columns = array(
+      'entity_type_id',
+      'attribute_id',
+      'store_id',
+      'entity_id',
+      'value'
+    );
+
+    $entityTypeId = Mage::getModel('eav/entity')->setType('catalog_product')->getTypeId();
+    $manufacturerAttributeCode = $this->_hepper()->getConfigAttributrCode();
+    $manufacturerAttributeId = Mage::getResourceModel('eav/entity_attribute')->getIdByCode(
+      'catalog_product',
+      $manufacturerAttributeCode
+    );
+
+    foreach ($products as $product) {
+      $data[] = array(
+        $columns[0] => $entityTypeId,
+        $columns[1] => $manufacturerAttributeId,
+        $columns[2] => Mage_Core_Model_App::ADMIN_STORE_ID,
+        $columns[3] => $product->getId(),
+        $columns[4] => $manufacturerOption
+      );
+    }
+
+    if ($data) {
+      $resource = Mage::getSingleton('core/resource');
+      $writeConnection = $resource->getConnection('core_write');
+      $writeConnection->insertOnDuplicate('catalog_product_entity_int', $data, $columns);
     }
   }
 

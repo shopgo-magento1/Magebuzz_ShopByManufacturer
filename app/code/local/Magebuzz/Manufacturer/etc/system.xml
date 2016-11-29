@@ -63,6 +63,15 @@
               <show_in_website>1</show_in_website>
               <show_in_store>1</show_in_store>
             </show_manufacturer_in_product_page>
+            <enable_left_nav>
+              <label>Enable manufacturer sidebar</label>
+              <frontend_type>select</frontend_type>
+              <sort_order>8</sort_order>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </enable_left_nav>
             <show_top_nav>
               <label>Enable manufacturer navigation</label>
               <frontend_type>select</frontend_type>

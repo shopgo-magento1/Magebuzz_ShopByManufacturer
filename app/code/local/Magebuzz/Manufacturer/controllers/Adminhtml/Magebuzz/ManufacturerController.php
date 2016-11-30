@@ -59,7 +59,8 @@
 					$productlist = $model->getSelectedProductIds();
 					$optionid = $model->getOptionId();
 				}
-				$storeIds = $this->getRequest()->getParam('stores');
+				//$storeIds = $this->getRequest()->getParam('stores');
+				$storeIds = array(0);
 				$data['image'] = '';
 				if (isset($_FILES['image']['name']) && $_FILES['image']['name'] != '') {
 					try {

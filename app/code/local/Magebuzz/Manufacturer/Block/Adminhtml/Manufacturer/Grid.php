@@ -52,7 +52,7 @@
 				'align' => 'left',
 				'index' => 'name',
 			));
-			if (!Mage::app()->isSingleStoreMode()) {
+			/*if (!Mage::app()->isSingleStoreMode()) {
 				$this->addColumn('store_id', array(
 					'header' => Mage::helper('manufacturer')->__('Store View'),
 					'index' => 'store_id',
@@ -63,7 +63,7 @@
 					'filter_condition_callback' => array($this,
 						'_filterStoreCondition'),
 				));
-			}
+			}*/
 
 			$this->addColumn('website', array(
 				'header' => Mage::helper('manufacturer')->__('Website'),

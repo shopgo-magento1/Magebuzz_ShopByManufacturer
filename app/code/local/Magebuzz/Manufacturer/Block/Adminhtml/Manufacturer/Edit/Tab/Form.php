@@ -50,7 +50,7 @@ class Magebuzz_Manufacturer_Block_Adminhtml_Manufacturer_Edit_Tab_Form extends M
       'required' => FALSE,
       'name'     => 'image',
     ));
-	  if (!Mage::app()->isSingleStoreMode()) {
+	  /*if (!Mage::app()->isSingleStoreMode()) {
 		  $fieldset->addField('store_id', 'multiselect', array(
 			  'name' => 'stores[]',
 			  'label' => Mage::helper('manufacturer')->__('Store View'),
@@ -65,7 +65,7 @@ class Magebuzz_Manufacturer_Block_Adminhtml_Manufacturer_Edit_Tab_Form extends M
 			  'name' => 'stores[]',
 			  'value' => Mage::app()->getStore(true)->getId()
 		  ));
-	  }
+	  }*/
     $fieldset->addField('website', 'text', array(
       'label'    => Mage::helper('manufacturer')->__('Website'),
       'required' => FALSE,
